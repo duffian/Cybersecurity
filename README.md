@@ -1,18 +1,16 @@
 # Cybersecurity
 # README.md
 ## Automated ELK Stack Deployment
-![image](https://user-images.githubusercontent.com/86072553/139510768-2fc6fb50-404b-4047-9209-7d9fb9b0ba24.png)
-
-
 
 The files in this repository were used to configure the network depicted below.
-
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
-Images/ID_CloudNetworkTopology
+![ID_CloudNetworkTopology](https://user-images.githubusercontent.com/86072553/139511611-47b2a7e1-29b8-443d-93d7-4414ed31ea9e.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
+
+[Testing Link]:(Ansible/ansible-playbook.yml "Ansible Playbook")
+
 Install Ansible with DVWA Containers
 Install ELK
 Filebeat Playbook
