@@ -9,12 +9,8 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - _TODO: Enter the playbook file._
 
-(https://github.com/duffian/Cybersecurity/blob/main/Ansible/ansible-playbook.yml "Ansible Playbook")
-https://github.com/duffian/Cybersecurity/blob/main/Ansible/ansible-playbook.yml "Ansible Playbook"
-https://github.com/duffian/Cybersecurity/blob/main/Ansible/ansible-playbook.yml
-[ansible]: https://github.com/duffian/Cybersecurity/blob/main/Ansible/ansible-playbook.yml
-https://github.com/duffian/Cybersecurity/blob/main/Ansible/ansible-playbook.yml
-
+https://github.com/duffian/Cybersecurity/blob/e5ace331266ad0422dcae0d660c7964aa0c1dec4/Ansible/ansible-playbook.yml
+https://github.com/duffian/Cybersecurity/blob/e5ace331266ad0422dcae0d660c7964aa0c1dec4/Ansible/ansible-playbook.yml "This Sucks"
 
 Install Ansible with DVWA Containers
 Install ELK
