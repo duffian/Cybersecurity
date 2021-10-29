@@ -1,6 +1,9 @@
 # Cybersecurity
 # README.md
 ## Automated ELK Stack Deployment
+![image](https://user-images.githubusercontent.com/86072553/139510768-2fc6fb50-404b-4047-9209-7d9fb9b0ba24.png)
+
+
 
 The files in this repository were used to configure the network depicted below.
 
