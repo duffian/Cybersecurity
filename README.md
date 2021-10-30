@@ -93,13 +93,17 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-Web-1: 10.0.0.5
-Web-2: 10.0.0.6
+
+**Web-1: 10.0.0.5**
+
+**Web-2: 10.0.0.6**
 
 
 We have installed the following Beats on these machines:
-Filebeat
-Metricbeat
+
+**Filebeat**
+
+**Metricbeat**
 
 
 These Beats allow us to collect the following information from each machine:
@@ -112,39 +116,39 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the Ansible control node control node and follow the steps below use the playbook(s):
 - Copy the  configuration file to ‘webservers’ (Web-1 VM and Web-2 VM) and ‘elk’ (ELK-SERVER VM).
-- Update the /etc/ansible/hosts file with the internal IP addresses to configure.
-- Run the playbook, and navigate to ‘http://[ELKVMPublicIP]:5601/app/kibana’ to check that the installation worked as expected.
+- Update the `/etc/ansible/hosts` file with the internal IP addresses to configure.
+- Run the playbook and navigate to `http://[ELKVMPublicIP]:5601/app/kibana` to check that the installation worked as expected.
 
 
 Which file is the playbook? Where do you copy it?
-- filebeat-config.yml [LINK FILEBEAT-CONFIG.YML]
-- /etc/ansible/files/filebeat-config.yml to /etc/ansible/files/filebeat-config.yml
+- The file is [filebeat-config.yml](Ansible/filebeat-config.yml)
+- To make a backup copy, copy it from `/etc/ansible/filebeat-config.yml` to `/etc/ansible/files/filebeat-config.yml`
 
 Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 
-- /etc/ansible/hosts # the hosts file
-- Specifying the ‘hosts’ at the beginning of the playbook file determines the machines you install the ELK server and/or Fillebeat on (e.g. ‘webservers’ or ‘elk’).
+- Updating the hosts file in `/etc/ansible/hosts` allows Ansible to run on a specific machine.
+- Specifying the host group at the beginning of the playbook file determines the machines you install the ELK server and/or Fillebeat on (e.g. ‘webservers’ or ‘elk’).
 
-	[IMAGE]
-
+![image](https://user-images.githubusercontent.com/86072553/139514009-c521c20f-0db1-422b-bd4d-edcda3f1042b.png)
 
 Which URL do you navigate to in order to check that the ELK server is running?
-- 'http://[ELK-serverPublicIP]:5601/app/kibana’
-- 'http://40.122.232.247:5601/app/kibana'
+- `http://[ELK-serverPublicIP]:5601/app/kibana`
+- `http://40.122.232.247:5601/app/kibana`
 
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
-Steps to set up ELK server:
-User needs to set up ELK server to utilize Filebeat and Metricbeat
+**__Steps to set up ELK server:__**
+
+- User needs to set up ELK server to utilize Filebeat and Metricbeat
 - Open GitBash/Terminal command line
-- ssh username@JumpBoxProvisioner-PrivateIP #ssh to JumpBoxProvisioner
+- `ssh username@JumpBoxProvisioner-PrivateIP` #ssh to JumpBoxProvisioner
 - List docker containers, start/attach ansible container:
-  - sudo docker container list -a
-  - sudo docker start [name-of-container] #if not already started
-  - sudo docker attach [name-of-container]
+  - `sudo docker container list -a`
+  - `sudo docker start [name-of-container]` #if not already started
+  - `sudo docker attach [name-of-container]`
 - Update hosts file adding IPs of machines to be configured
-  - cd /etc/ansible
-  - sudo nano hosts
+  - `cd /etc/ansible`
+  - `sudo nano hosts`
     - [elk]
     - 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
     - save and exit hosts file
