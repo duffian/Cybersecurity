@@ -1,5 +1,12 @@
 # Cybersecurity
 # README.md
+- "Ansible" directory contains several Ansible, Filebeat, and Metricbeat playbooks and config files.
+- "Diagrams" directory contains networking topologies.
+- "Images" directory contains images of activity and project work.
+- "Linux" directory contains helpful scripts for Linux cybersecurity. 
+___
+
+
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
