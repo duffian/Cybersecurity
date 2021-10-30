@@ -232,4 +232,9 @@ As a **Bonus**, provide the specific commands the user will need to run to downl
 
 ___
 __Additional Files Submitted as Part of Cloud Networking Project I__
-[Cloud Networking Essay - Containers]( 
+[Cloud Networking Essay - Containers](ID_Container-Essay_SubmissionFile.md)
+
+[Kibana Investigation Findings - SubmissionFile](ID_Kibana-Investigation_SubmissionFile.md)
+
+___
+
