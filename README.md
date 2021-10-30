@@ -233,6 +233,20 @@ As a **Bonus**, provide the specific commands the user will need to run to downl
 ___
 __Additional Files Submitted as Part of Cloud Networking Project I__
 
+__Activity Screenshots__
+
+[Kibana Dashboard Accessible Screenshot-a]
+
+![image](https://user-images.githubusercontent.com/86072553/139525972-e9cc5f94-c9e8-490e-a554-255286aab6d8.png)
+
+[Kibana Dashboard Accessible Screenshot-b]![image](https://user-images.githubusercontent.com/86072553/139525996-6650d9ad-01fc-469f-9d10-bf0acc4ca46f.png)
+
+[ELK GUI Filebeat Incoming Data Verification]![image](https://user-images.githubusercontent.com/86072553/139526019-0c8e5188-4d7d-4b32-b738-75c571a713a2.png)
+
+[ELK GUI Metricbeat Incoming Data Verification]![image](https://user-images.githubusercontent.com/86072553/139526034-19446c99-d5c5-4582-97c7-6ca19e850596.png)
+
+__Essay and Kibana Investigation__
+
 [Cloud Networking Essay - Containers](ID_Container-Essay_SubmissionFile.md)
 
 [Kibana Investigation Findings - SubmissionFile](ID_Kibana-Investigation_SubmissionFile.md)
