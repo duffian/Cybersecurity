@@ -177,7 +177,7 @@ As a **Bonus**, provide the specific commands the user will need to run to downl
 ![image](https://user-images.githubusercontent.com/86072553/139514339-bf4d2a3f-b89b-4280-beaf-7ce98dfda22c.png)
 
 ![image](https://user-images.githubusercontent.com/86072553/139514356-19324d16-c680-41ee-bebe-8305e8c4a5d2.png)
-`output.elasticsearch:`
+- `output.elasticsearch:`
 	`hosts: ["ELK-serverPrivateIP:9200"]`
 	`username: "elastic"`
 	`password: "changeme"`
