@@ -149,62 +149,75 @@ As a **Bonus**, provide the specific commands the user will need to run to downl
 - Update hosts file adding IPs of machines to be configured
   - `cd /etc/ansible`
   - `sudo nano hosts`
-    - [elk]
-    - 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
-    - save and exit hosts file
+    - `[elk]`
+    - `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
+    - `save and exit hosts file`
 - Update ansible config file with 'username'
-  - cd /etc/ansible 
-  - sudo nano ansible.cfg 
-    - remote_user = username
+  - `cd /etc/ansible` 
+  - `sudo nano ansible.cfg` 
+    - `remote_user = username`
     - #save and exit
 - Install ELK 
-  - ansible-playbook install-elk.yml [LINK TO GITHUB 'INSTALL-ELK.YML'] #create, edit, and run ELK playbook
-  - ssh username@ELK-serverPrivateIP
+  - `ansible-playbook install-elk.yml` [install-elk.yml](Ansible/install-elk.yml) #create, edit, and run ELK playbook
+  - `ssh username@ELK-serverPrivateIP`
 
-Install Filebeat:
-- #User will need to create 'filebeat-config.yml' and 'filebeat-playbook.yml' 
+**__Install Filebeat:__**
+
+- User will need to create `filebeat-config.yml` and `filebeat-playbook.yml` 
 - Open GitBash/Terminal command line
-- ssh username@JumpBoxProvisioner-PrivateIP #ssh to JumpBoxProvisioner
-- ssh username@ELK-serverPrivateIP
-- cd /etc/ansible 
-- curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > filebeat-config.yml #download filebeat-config.yml file
-- cp filebeat-config.yml /etc/ansible/files #backup filebeat-config.yml file
-- cd /etc/filebeat/ 
-- sudo nano filebeat-config.yml [LINK FILEBEAT-CONFIG.YML]
-- Modify filebeat hosts IPs in config file
-  - #PICTURE: change
-	output.elasticsearch:
-	hosts: ["ELK-serverPrivateIP:9200"]
-	username: "elastic"
-	password: "changeme"
+- `ssh username@JumpBoxProvisioner-PrivateIP` #ssh to JumpBoxProvisioner
+- `ssh username@ELK-serverPrivateIP`
+- `cd /etc/ansible` 
+- `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > filebeat-config.yml` #download filebeat-config.yml file
+- `cp filebeat-config.yml /etc/ansible/files` #backup filebeat-config.yml file
+- `cd /etc/filebeat/` 
+- `sudo nano filebeat-config.yml` [filebeat-config.yml](Ansible/filebeat-config.yml)
+- Modify filebeat host IPs in config file.
+  
+![image](https://user-images.githubusercontent.com/86072553/139514339-bf4d2a3f-b89b-4280-beaf-7ce98dfda22c.png)
+
+![image](https://user-images.githubusercontent.com/86072553/139514356-19324d16-c680-41ee-bebe-8305e8c4a5d2.png)
+`output.elasticsearch:`
+	`hosts: ["ELK-serverPrivateIP:9200"]`
+	`username: "elastic"`
+	`password: "changeme"`
 	...
-	setup.kibana:
-	host: "ELK-serverPrivateIP:5601"
+	`setup.kibana:`
+	`host: "ELK-serverPrivateIP:5601"`
 	#save and exit
-- sudo nano filebeat-playbook.yml [LINK FILEBEAT-PLAYBOOK.YML] #create filebeat playbook
-- #PICTURE of filebeat-playbook.yml
-- ansible-playbook filebeat-playbook.yml #run filebeat playbook
+	
+- `sudo nano filebeat-playbook.yml` [filebeat-playbook.yml](Ansible/filebeat-playbook.yml) #create filebeat playbook
 
+![image](https://user-images.githubusercontent.com/86072553/139514426-ff5b7feb-f8a9-4ca5-bf8a-a84538945c66.png)
 
-Install Metricbeat:
-#User will need to create 'metricbeat-config.yml' and 'metricbeat-playbook.yml'
+- `ansible-playbook filebeat-playbook.yml` #run filebeat playbook
+
+**__Install Metricbeat:__**
+
+- User will need to create 'metricbeat-config.yml' and 'metricbeat-playbook.yml'
 - Open GitBash/Terminal command line
-- ssh username@JumpBoxProvisioner-PrivateIP #ssh to JumpBoxProvisioner
-- ssh username@ELK-serverPrivateIP
-- cd /etc/ansible
-- curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > metricbeat-config.yml #download metricbeat-config.yml
-- cp metricbeat-config.yml /etc/ansible/files #backup filebeat-config.yml file
-- cd /etc/ansible/files
-- sudo nano metricbeat-config.yml [LINK METRICBEAT-CONFIG.YML]
+- `ssh username@JumpBoxProvisioner-PrivateIP` #ssh to JumpBoxProvisioner
+- `ssh username@ELK-serverPrivateIP`
+- `cd /etc/ansible`
+- `curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > metricbeat-config.yml` #download metricbeat-config.yml
+- `cp metricbeat-config.yml /etc/ansible/files` #backup filebeat-config.yml file
+- `cd /etc/ansible/files`
+- `sudo nano metricbeat-config.yml` [metricbeat-config.yml](Ansible/metricbeat-config.yml)
 - Modify metricbeat hosts IPs in config file
-- #PICTURE edit:
-	setup.kibana:
-  		host: "10.1.0.4:5601"
-  	...
-  	hosts: ["10.1.0.4:9200"]
-	username: "elastic"
-	password: "changeme"
-	#save and exit
-- sudo nano metricbeat-playbook.yml [LINK TO METRICBEAT-PLAYBOOK.YML] #create and edit metricbeat playbook file
-- #PICTURE: metricbeat-playbook.yml script
-- ansible-playbook metricbeat-playbook.yml # run metricbeat playbook
+
+![image](https://user-images.githubusercontent.com/86072553/139514562-cb2b4d1d-039b-4969-987f-9b1996b0c7fa.png)
+
+![image](https://user-images.githubusercontent.com/86072553/139514575-a4e25471-e256-4b39-b8e1-dd4eab493ad5.png)
+
+- `setup.kibana:`
+- `host: "10.1.0.4:5601"`
+- ...
+  -  `hosts: ["10.1.0.4:9200"]`
+  - `username: "elastic"`
+  - `password: "changeme"`
+- #save and exit
+`- sudo nano metricbeat-playbook.yml` [metricbeat-playbook.yml](Ansible/metricbeat-playbook.yml) #create and edit metricbeat playbook file
+
+![image](https://user-images.githubusercontent.com/86072553/139514707-2a9e9aaa-4e77-4710-ab80-7dcdde36b19d.png)
+
+- `ansible-playbook metricbeat-playbook.yml` # run metricbeat playbook
