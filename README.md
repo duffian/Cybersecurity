@@ -74,72 +74,22 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because automating configuration is more time efficient and reduces the possibility of errors.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
 
 - Install docker.io, pip3, and docker python module:
 
-	[IMAGE]
-
-     # Use apt module
-     - name: Install docker.io
-       apt:
-         update_cache: yes
-         name: docker.io
-         state: present
-
-
-       # Use apt module
-     - name: Install pip3
-       apt:
-         force_apt_get: yes
-         name: python3-pip
-         state: present
-
-
-       # Use pip module
-     - name: Install Docker python module
-       pip:
-         name: docker
-         state: present
+![image](https://user-images.githubusercontent.com/86072553/139513470-8488f6da-da19-4644-b8b2-23348e8fe7cb.png)
 
 - Increase amount of virtual memory:
 
-	[IMAGE]
-
-       # Use sysctl module
-     - name: Use more memory
-       sysctl:
-         name: vm.max_map_count
-         value: "262144"
-         state: present
-         reload: yes
+![image](https://user-images.githubusercontent.com/86072553/139513481-c8ec2404-1d4b-4775-8a9a-72527b4d0678.png)
 
 - Download and launch docker ELK container:
 
-	[IMAGE]
-
-       # Use docker_container module
-     - name: download and launch a docker elk container
-       docker_container:
-         name: elk
-         image: sebp/elk:761
-         state: started
-         restart_policy: always
-         published_ports:
-           - 5601:5601
-           - 9200:9200
-           - 5044:5044
-
-
+![image](https://user-images.githubusercontent.com/86072553/139513509-6f25f5b1-27ba-44b4-8b7a-bb68715fa8a6.png)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-	[IMAGE]
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
-Images/sudodocker-ps.png
+![image](https://user-images.githubusercontent.com/86072553/139513553-874421b9-d1bb-4079-9e57-3d4441d01ee9.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
