@@ -1,4 +1,5 @@
 ID_Project1_EssaySubmission-Containers
+
 Deploying containers as  part of a cloud network is appropriate for defensive cybersecurity measures. Deploying containers has two basic benefits when deployed as part of a cloud network. First, containers minimize inbound traffic, naturally decreasing the risk of malicious cyberspace attacks on the network. Second, containers make configuring machines more efficient.
 
 In a recent project I was responsible for configuring and securing a virtual cloud network., I deployed containers to maximize security and configure multiple machines at once. As part of a “fanning in” strategy, Using ssh connections, I deployed a Jump Box to act as a gateway into the secure network environment. Using Ansible and ELK, I then configured a load balancer to handle http traffic, network security groups, several virtual machines as servers, and an ELK server. Containers allowed the quick and safe deployment and configuration of several network resources secured behind firewalls with active traffic and system resource monitoring. 
