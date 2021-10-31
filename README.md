@@ -10,7 +10,7 @@ ___
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
-![ID_CloudNetworkTopology](https://user-images.githubusercontent.com/86072553/139511611-47b2a7e1-29b8-443d-93d7-4414ed31ea9e.png)
+![image](https://user-images.githubusercontent.com/86072553/139566246-a4895e49-08db-43c6-b557-fdf0f5f4d086.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
