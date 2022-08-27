@@ -7,7 +7,7 @@
 ___
 
 
-## Azure Cloud Networking and Automated Elastic Stack Deployment
+## Azure Cloud Network and Automated Elastic Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 ![image](https://user-images.githubusercontent.com/86072553/139566246-a4895e49-08db-43c6-b557-fdf0f5f4d086.png)
