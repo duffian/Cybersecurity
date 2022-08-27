@@ -1,7 +1,7 @@
 # Cybersecurity
 # README.md
 - "Ansible" directory contains several Ansible, Filebeat, and Metricbeat playbooks and config files.
-- "Diagrams" directory contains networking topologies.
+- "Diagrams" directory contains network topologies.
 - "Images" directory contains images of activity and project work.
 - "Linux" directory contains helpful scripts for Linux cybersecurity. 
 ___
